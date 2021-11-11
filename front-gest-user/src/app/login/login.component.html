@@ -1,0 +1,48 @@
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <!-- <img src="../../assets/images/logo-dark.svg" alt="logo"> -->
+              </div>
+              <!-- <h4>Hello! let's get started</h4> -->
+              <h6 class="font-weight-light">Authentifiez-vous pour continuer.</h6>
+              <form class="pt-3" #f="ngForm" (ngSubmit)="authentication(f)">
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Non d'utilisateur" name="login" [(ngModel)]="Auth.login">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Mot de passe" name="motDePasse" [(ngModel)]="Auth.motDePasse">
+                </div>
+                <div class="mt-3">
+                  <button type="submit" class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn">CONNEXION</button>
+                  <!-- <a  >CONNEXION</a> -->
+                </div>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input">
+                      Se rappeler de moi
+                    </label>
+                  </div>
+                  <a href="#" class="auth-link text-black">Mot de passe oublier?</a>
+                </div>
+                <!-- <div class="mb-2">
+                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
+                    <i class="mdi mdi-facebook mr-2"></i> Connect using facebook
+                  </button>
+                </div> -->
+                <div class="text-center mt-4 font-weight-light">
+                  Vous n'avez pas de compte? <a href="register.html" class="text-primary">Créez-en</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

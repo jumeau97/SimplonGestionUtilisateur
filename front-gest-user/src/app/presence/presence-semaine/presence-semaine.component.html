@@ -1,0 +1,96 @@
+
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-app-bar></app-app-bar>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-menu></app-menu>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">LISTE COMPLETE DES UTILISATEUR PAR SEMAINE</h4>
+                  <!-- <p class="card-description"> -->
+                    <div class="template-demo">
+                        <button type="button" class="btn btn-primary" routerLink="/liste/presence/jour">Presence par jour</button>
+                        <button type="button" class="btn btn-secondary" routerLink="/liste/presence/semaine">Presence par semaine</button>
+                        <button type="button" class="btn btn-success" routerLink="/liste/presence/mois">Presence par mois</button>
+                      </div>
+                    <!-- Add class <code>.table-striped</code> -->
+                    <br>
+                    <form class="form-inline" #f="ngForm" (ngSubmit)="ListAppBySemaine(f)">
+                        <!-- <label class="sr-only" for="inlineFormInputName2">Name</label> -->
+                        <input type="month" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="mois" [(ngModel)]="Semaine.mois">
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="semaine" [(ngModel)]="Semaine.semaine" placeholder="exple:semaine1">
+                        <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
+                      </form>
+                  <!-- </p> -->
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Nom
+                          </th>
+                          <th>
+                            Prenom
+                          </th>
+                          <th>
+                            Contact
+                          </th>
+                          <th>
+                            Adresse
+                          </th>
+                          <th>
+                            Statut
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="5" style="text-align: center;" *ngIf="!listPS || listPS==''">Aucune donnée presente</td>
+                        </tr>
+                        <tr *ngFor="let l of listPS">
+                          <td class="py-1">
+                            {{l.utilisateur.nom}}
+                          </td>
+                          <td>
+                            {{l.utilisateur.prenom}}
+                          </td>
+                          <td>
+                            {{l.utilisateur.contact}}
+                          </td>
+                          <td>
+                            {{l.utilisateur.adresse}}
+                          </td>
+                          <td>
+                            {{l.utilisateur.statut}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

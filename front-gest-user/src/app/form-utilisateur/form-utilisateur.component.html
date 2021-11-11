@@ -1,0 +1,100 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <!-- ============================ -->
+    <app-app-bar></app-app-bar>
+    <!-- =============================== -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-menu></app-menu>
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">NOUVEAU UTILISATEUR</h4>
+                  <form class="form-sample" #f="ngForm" (ngSubmit)="createUser(f)">
+                    <p class="card-description">
+                      Information personnelle
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Nom</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="nom" [(ngModel)]="Utilisateur.nom" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Prenom</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" name="prenom"  [(ngModel)]="Utilisateur.prenom" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Contact</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="contact" [(ngModel)]="Utilisateur.contact" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Adresse</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="adresse" [(ngModel)]="Utilisateur.adresse" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Statut</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="statut" [(ngModel)]="Utilisateur.statut">
+                              <option value="formateur">Formateur</option>
+                              <option value="apprenant">Apprenant</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Date of Birth</label>
+                          <div class="col-sm-9">
+                            <input class="form-control" placeholder="dd/mm/yyyy"/>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+
+                    <div class="row">
+                      <button type="submit" class="btn btn-primary mr-2">Enregistrer</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <!-- ============================= -->
+        <app-footer></app-footer>
+        <!-- ========================= -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
